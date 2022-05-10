@@ -21,6 +21,6 @@ def currency_rates_adv(char_code: str):
 
 
 value, date = currency_rates_adv("USD")
-print(value, date)
+print(value, date, sep=', ')
 value, date = currency_rates_adv("eur")
-print(value, date)
+print(value, date, sep=', ')

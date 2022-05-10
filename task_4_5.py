@@ -24,7 +24,7 @@ def currency_rates_adv(argv):
 
 if __name__ == '__main__':
     value, date = currency_rates_adv(sys.argv)
-    sys.exit(print(value, date))
+    sys.exit(print(value, date, sep=', '))
 
 # PS C:\Users\malysheve\Desktop\гикбрейнс\Python> python task_4_5.py usd
 # 67.3843 2022-05-10
