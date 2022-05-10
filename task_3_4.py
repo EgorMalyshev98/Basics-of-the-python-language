@@ -1,6 +1,3 @@
-Full_names = "Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", \
-             "Анна Савельева"
-
 
 def thesaurus_adv(*names) -> dict:
     f_names = [name.split(' ') for name in names]
