@@ -14,20 +14,20 @@ def format_price(prices):
     st_prices = []
     for i in range(len(prices)):
         try:
-            raw = str(prices[i])
-            rub, cop = map(str, raw.split(".", 2))
+            row = str(prices[i])
+            rub, cop = map(str, row.split(".", 2))
             if len(rub) < 2:
                 rub = '0' + rub
             if len(cop) < 2:
                 cop += '0'
             st_prices.append(f'{rub} руб {cop} коп')
         except ValueError:
-            raw = str(prices[i])
-            if len(raw) < 2:
-                rub = '0' + raw
+            row = str(prices[i])
+            if len(row) < 2:
+                rub = '0' + row
                 cop = '00'
             else:
-                rub = raw
+                rub = row
                 cop = '00'
             st_prices.append(f'{rub} руб {cop} коп')
     return print(st_prices)
