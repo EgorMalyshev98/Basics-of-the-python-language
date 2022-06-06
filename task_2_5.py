@@ -15,7 +15,7 @@ def format_price(prices):
     for i in range(len(prices)):
         try:
             row = str(prices[i])
-            rub, cop = map(str, row.split(".", 2))
+            rub, cop = map(str, row.split(".", 1))
             if len(rub) < 2:
                 rub = '0' + rub
             if len(cop) < 2:
@@ -30,21 +30,26 @@ def format_price(prices):
                 rub = row
                 cop = '00'
             st_prices.append(f'{rub} руб {cop} коп')
-    return print(st_prices)
+    return st_prices
 
 
-format_price(price_list)
+print(format_price(price_list))
 
 print(id(price_list))
 
 price_list.sort()
 
-format_price(price_list)
+print(format_price(price_list))
 
 print(id(price_list))
 
-desc_price_list = []
 price_list.sort(reverse=True)
-desc_price_list = price_list  # Зачем нужно было создавать новый список? Pycharm ругается
-format_price(desc_price_list[0:5])
+
+desc_price_list = price_list[0:5]
+
+desc_price_list.sort()
+
+print(format_price(desc_price_list))
+
+
 
