@@ -6,6 +6,13 @@ class Stationery:
 
     def draw(self) -> None:
 
+        print('Запись отрисовки')
+
+
+class Pen(Stationery):
+
+    def draw(self) -> None:
+
         name = self.__class__.__name__
 
         if name != 'Pencil':
@@ -15,16 +22,30 @@ class Stationery:
             print(f'{name}: приступил к отрисовке объекта "{self.title}"')
 
 
-class Pen(Stationery):
-    pass
-
-
 class Pencil(Stationery):
-    pass
+
+    def draw(self) -> None:
+
+        name = self.__class__.__name__
+
+        if name != 'Pencil':
+            print(f'{name}: приступил к отрисовке объекта "{self.title}"')
+        else:
+            print('Запуск отрисовки')
+            print(f'{name}: приступил к отрисовке объекта "{self.title}"')
 
 
 class Handle(Stationery):
-    pass
+
+    def draw(self) -> None:
+
+        name = self.__class__.__name__
+
+        if name != 'Pencil':
+            print(f'{name}: приступил к отрисовке объекта "{self.title}"')
+        else:
+            print('Запуск отрисовки')
+            print(f'{name}: приступил к отрисовке объекта "{self.title}"')
 
 
 if __name__ == '__main__':
