@@ -32,13 +32,30 @@ class Cell:
         check_class(other)
         return Cell(int(self.cells // other.cells))
 
-    # def make_order(self, number: int) -> str:
+    def make_order(self, number: int) -> str:
+
+        nums = self.cells // number
+        rem = self.cells % number
+        string = str()
+        for n in range(nums):
+            string += f"{'*' * number}\n"
+        else:
+            string += f"{'*' * rem}\n"
+        return string
 
 
 if __name__ == '__main__':
     cell_1 = Cell(15)
     cell_2 = Cell(10)
     cell_3 = Cell(3)
+
+    print(cell_1.make_order(10))
+
+    sum_cell = cell_2 + cell_3
+    print(sum_cell.make_order(6))
+
+    sub_cell = cell_1 - cell_3
+    print(sub_cell.make_order(6))
 
     mul_cell = cell_2 * cell_3
     print(mul_cell.cells)  # 30
