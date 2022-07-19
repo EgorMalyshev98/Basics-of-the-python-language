@@ -1,7 +1,7 @@
-def user_hobby_dict(users_file, hobbys_file):
-    
-    from itertools import zip_longest
+from itertools import zip_longest
 
+
+def user_hobby_dict(users_file, hobbys_file):
     hobby_list = []
     users_list = []
 
@@ -25,7 +25,7 @@ def user_hobby_dict(users_file, hobbys_file):
         return dictt
 
     else:
-        return 'Error 1'
+        raise ValueError('Хобби больше, чем пользователей')
 
 
 user_file = 'users.csv'
