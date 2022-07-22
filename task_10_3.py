@@ -1,7 +1,3 @@
-def check_class(obj):
-    if not isinstance(obj, Cell):
-        raise TypeError('действие допустимо только для экземпляров того же класса')
-
 
 class Cell:
 
@@ -9,11 +5,11 @@ class Cell:
         self.cells = cells
 
     def __add__(self, other):
-        check_class(other)
+        self.check_class(other)
         return Cell(self.cells + other.cells)
 
     def __sub__(self, other):
-        check_class(other)
+        self.check_class(other)
         sub = self.cells - other.cells
         if sub < 0:
             raise ValueError('недопустимая операция')
@@ -21,15 +17,15 @@ class Cell:
             return Cell(sub)
 
     def __mul__(self, other):
-        check_class(other)
+        self.check_class(other)
         return Cell(self.cells * other.cells)
 
     def __truediv__(self, other):
-        check_class(other)
+        self.check_class(other)
         return Cell(int(self.cells / other.cells))
 
     def __floordiv__(self, other):
-        check_class(other)
+        self.check_class(other)
         return Cell(int(self.cells // other.cells))
 
     def make_order(self, number: int) -> str:
@@ -42,6 +38,11 @@ class Cell:
         else:
             string += f"{'*' * rem}\n"
         return string
+
+    @staticmethod
+    def check_class(obj):
+        if not isinstance(obj, Cell):
+            raise TypeError('действие допустимо только для экземпляров того же класса')
 
 
 if __name__ == '__main__':
