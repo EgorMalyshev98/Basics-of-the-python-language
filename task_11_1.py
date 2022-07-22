@@ -11,9 +11,9 @@ class Data:
     @classmethod
     def to_int(cls, date: str):
         in_date = cls(date)
-        day, mount, year = map(int, in_date.date.split('-'))
+        day, month, year = map(int, in_date.date.split('-'))
 
-        return day, mount, year
+        return day, month, year
 
     @staticmethod
     def __valid_date(date):
@@ -26,4 +26,4 @@ class Data:
 
 if __name__ == '__main__':
     dat = Data('31-12-1998')
-    print(*dat.to_int('31-12-1998'))
+    print(dat.to_int('29-12-1998'))
