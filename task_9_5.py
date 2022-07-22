@@ -15,7 +15,7 @@ class Pen(Stationery):
 
         name = self.__class__.__name__
 
-        if name != 'Pen':
+        if name != 'Pencil':
             print(f'{name}: приступил к отрисовке объекта "{self.title}"')
         else:
             print('Запуск отрисовки')
@@ -41,7 +41,7 @@ class Handle(Stationery):
 
         name = self.__class__.__name__
 
-        if name != 'Handle':
+        if name != 'Pencil':
             print(f'{name}: приступил к отрисовке объекта "{self.title}"')
         else:
             print('Запуск отрисовки')
