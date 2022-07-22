@@ -4,7 +4,7 @@ class Worker:
         self.name = name
         self.surname = surname
         self.position = position
-        self.income = income
+        self._income = income
 
 
 class Position(Worker):
@@ -17,7 +17,7 @@ class Position(Worker):
     def get_total_income(self) -> int:
         """Возвращает суммарный ежемесячных доход"""
 
-        return sum(self.income.values())
+        return sum(self._income.values())
 
 
 if __name__ == '__main__':
